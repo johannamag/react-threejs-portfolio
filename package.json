@@ -11,6 +11,8 @@
   "dependencies": {
     "@react-three/drei": "^9.88.7",
     "@react-three/fiber": "^8.15.8",
+    "@react-three/postprocessing": "^2.15.8",
+    "gltf-pipeline": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-simple-maps": "^3.0.0",

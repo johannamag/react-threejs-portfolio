@@ -1,5 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
+import Design from "./Design";
+import Social from "./Social";
+import WebDev from "./WebDev";
+import Illustration from "./Illustration";
+import Product from "./Product";
 
 const data = [
   "Web Development",
@@ -14,6 +19,7 @@ const Section = styled.div`
   scroll-snap-align: center;
   display: flex;
   justify-content: center;
+  position: relative;
 `;
 const Container = styled.div`
   width: 1200px;
@@ -67,17 +73,21 @@ const Right = styled.div`
 `;
 
 function Works() {
+  const [work, setWork] = useState("Web Development")
   return (
     <Section>
       <Container>
         <Left>
           <List>
             {data.map((d) => (
-              <ListItem key={d} text={d}>{d}</ListItem>
+              <ListItem key={d} text={d} style={{ color: work === d ? "pink" : "transparent" }}
+              onClick={() => setWork(d)}>{d}</ListItem>
             ))}
           </List>
         </Left>
-        <Right></Right>
+        <Right>
+          {work === "Web Development" ? (<WebDev />) : work === "Design" ? (<Design />) : work === "Illustration" ? (<Illustration />) : work === "Product Design" ? (<Product />) : (<Social />)}
+        </Right>
       </Container>
     </Section>
   );
