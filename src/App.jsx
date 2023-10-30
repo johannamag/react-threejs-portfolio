@@ -3,6 +3,7 @@ import Who from "./components/Who"
 import Works from "./components/Works"
 import Contact from "./components/Contact"
 import styled from 'styled-components'
+import Test from "./components/Test"
 
 const Container = styled.div`
   height: 100vh;
